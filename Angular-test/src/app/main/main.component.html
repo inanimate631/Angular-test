@@ -1,0 +1,24 @@
+<div class="input__wrapper">
+  <p class="error__place" *ngIf="searchErrorName">{{ searchErrorName }}</p>
+  <input
+    type="text"
+    class="search-input"
+    placeholder="Enter the user name"
+    maxlength="20"
+    (input)="onInputChange($event)"
+    [ngStyle]="{ 'border-color': searchErrorName ? 'red' : 'initial' }"
+  />
+</div>
+
+<div class="container">
+  <ul class="search__list">
+    <li class="search__list-item" *ngFor="let user of users">
+      <img
+        [src]="user.avatar_url"
+        alt="avatar_url"
+        class="search__list-item--img"
+      />
+      <h2 class="search__list-item--name">{{ user.login }}</h2>
+    </li>
+  </ul>
+</div>
