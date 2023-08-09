@@ -1,0 +1,38 @@
+.modal-content {
+  border: none;
+}
+
+.modal-header {
+  display: block;
+  padding: 10px;
+}
+
+.modal-title {
+  text-align: center;
+  font-size: 28px;
+  line-height: 32px;
+}
+
+.modal-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex-direction: column;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.modal-issues {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-issues--img {
+  width: 25px;
+}
+
+.modal-link{
+  color: #497DDD;
+  border-bottom: 1px dashed;
+}

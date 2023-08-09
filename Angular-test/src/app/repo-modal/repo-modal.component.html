@@ -1,0 +1,33 @@
+<div class="_modal" tabindex="-1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">{{ selectedRepo?.name }}</h3>
+      </div>
+      <div class="modal-body">
+        <p class="modal-description" *ngIf="selectedRepo?.description">
+          description: {{ selectedRepo?.description }}
+        </p>
+        <p class="modal-language">Language: {{ selectedRepo?.language }}</p>
+        <div class="modal-issues">
+          Has Issues:
+          <img
+            [src]="
+              selectedRepo?.has_issues
+                ? './assets/Checkmark_icon-icons.com_71846.svg'
+                : './assets/cross-black-circular-button_icon-icons.com_73054.svg'
+            "
+            alt="has_isues"
+            class="modal-issues--img"
+          />
+        </div>
+        <a
+          href="{{ selectedRepo?.html_url }}"
+          target="_blank"
+          class="modal-link"
+          >GitHub Repository</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
