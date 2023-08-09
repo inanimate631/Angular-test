@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchResponse, User } from '../interface/User.interface';
+import { SearchResponse, User } from '../interface/Main.interface';
 import { RequestService } from '../services/request.service';
 import { catchError, take } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -13,7 +14,7 @@ export class MainComponent implements OnInit {
   timeout: ReturnType<typeof setTimeout> | null = null;
   searchErrorName: string | null = null;
 
-  constructor(private reqServices: RequestService) { }
+  constructor(private reqServices: RequestService, private router: Router) { }
 
   ngOnInit(): void {
     this.reqServices.getUsers().pipe(take(1)).subscribe(v => {
@@ -38,5 +39,9 @@ export class MainComponent implements OnInit {
           this.users = v.items
         })
     }, 500)
+  }
+
+  openRepos(login:string){
+    this.router.navigate([`repos/${login}`]);
   }
 }

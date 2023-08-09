@@ -1,0 +1,14 @@
+<div class="_container">
+  <ul class="repo__list">
+    <li
+      class="repo__list-item"
+      *ngFor="let repo of repos"
+      (click)="openModal(repo)"
+    >
+      <h2 class="repo__list-item--name">Repo name: {{ repo.name }}</h2>
+      <p class="repo__list-item--description">
+        Description: {{ repo.description }}
+      </p>
+    </li>
+  </ul>
+</div>

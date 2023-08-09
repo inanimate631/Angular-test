@@ -1,0 +1,30 @@
+.repo__list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 15px;
+}
+
+.repo__list-item {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  border: 2px solid hsl(210, 11%, 15%);
+  border-radius: 5px;
+}
+
+.repo__list-item--name {
+  font-size: 24px;
+  line-height: 26px;
+}
+
+.repo__list-item--description {
+  font-size: 22px;
+  line-height: 24px;
+}
+
+@media (max-width: 650px) {
+  .repo__list-item {
+    grid-template-columns: 1fr;
+  }
+}
