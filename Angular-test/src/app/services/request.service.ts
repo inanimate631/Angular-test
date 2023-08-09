@@ -5,13 +5,12 @@ import { SearchResponse, User } from '../interface/Main.interface';
 import { Repo } from '../interface/Repos.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RequestService {
+  private url = 'https://api.github.com/';
 
-  private url = 'https://api.github.com/'
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.url}users`);

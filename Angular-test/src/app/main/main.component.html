@@ -12,7 +12,11 @@
 
 <div class="_container">
   <ul class="search__list">
-    <li class="search__list-item" *ngFor="let user of users" (click)="openRepos(user.login)">
+    <li
+      class="search__list-item"
+      *ngFor="let user of users"
+      (click)="openRepos(user.login)"
+    >
       <img
         [src]="user.avatar_url"
         alt="avatar_url"
